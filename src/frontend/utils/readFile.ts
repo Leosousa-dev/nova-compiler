@@ -1,7 +1,8 @@
 import fs from "node:fs";
 
 
-export function read(path: string){
-    const src = path.split(" ")
+export default function read(path: string){
+    const filesrc = fs.readFileSync(path, 'utf-8')
+    const src = filesrc.split(" ")
     return src;
 }
